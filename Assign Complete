@@ -1,0 +1,55 @@
+#include<iostream.h>
+#include<conio.h>
+#include<process.h>
+class Distance
+{
+private :
+int foot,inch;
+public :
+Distance (): foot(0), inch(0) {}
+Distance(int f, int in) : foot(f), inch(in) {}
+
+void getdist()
+{
+cout <<"\enter value for foot : ";   cin >>foot;
+cout <<"\enter value for inch : ";   cin >> inch;
+}
+void showdist()
+{
+cout <<foot<<"-"inch<<endl;}
+void sub_dist(Distance,Distance);
+};
+void Distance::sub_dist(Distance d2, Distance d1)
+{
+foot-=d1.foot-d2.foot;
+inch=d1.inch-d2.inch;
+if(d1.foot>d2.foot)
+{
+cout <<"It can't be Subtract";
+exit (1);
+}
+if(d1.inch>d2.inch)
+{
+cout <<"It can't be Subtract";
+exit (1);
+}
+}
+int main ()
+{
+Distance dist1,dist3;
+clrscr();
+Distance dist2(7,7);
+dist1.getdist();
+dist3.showdist();
+dist2.showdist();
+dist1.showdist();
+dist3.sub_dist(dist1,dist2);
+cout<<"\n dist1 = ";
+dist1.showdist();
+cout<<"\n dist2 = ";
+dist2.showdist();
+cout<<"\n dist3 = ";
+dist3.showdist();
+cout <<endl;
+return 0;
+}
